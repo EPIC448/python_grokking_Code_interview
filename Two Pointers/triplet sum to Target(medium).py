@@ -17,44 +17,61 @@ Output: 3
 Explanation: The triplet [1, 1, 1] has the closest sum to the target.
 '''
 
+#my code...  Needed a ton of FIX with the  Real answer. 
+import math
 def triplet_sum_close_to_target(arr, target_sum):
     triplet = []
     arr.sort()
- 
-    for i in range(len(arr)):
+    smallest_difference = math.inf
+    for i in range(len(arr) -2):
+      left = i +1
+      right = len(arr) - 1
 
-      if i > 0 and arr[i] == arr[i- 1]:
-       continue
-    
-    search_pair(arr ,target_sum,   i+1,  triplet)
-    
-    return triplet
+      while(left < right):
+        target_diff = target_sum - arr[i] - arr[left] - arr[right]
 
+        if target_diff == 0: # find triplet with exact sum
+          return target_sum - target_diff #return sum of all numbers
+        
+        # This IF statement, handle the smallest SUM when we have more than one solution
+        if abs(target_diff) < abs(smallest_difference) or (abs(target_diff) == abs(smallest_difference) and target_diff > smallest_difference):
+          smallest_difference = target_diff # save the closest and the biggest difference
 
-def search_pair(arr, target_sum, left, triplet):
-  right = len(arr) -1
-
-  while(left < right):
-     currentSum = arr[left] + arr[right]
-
-     if currentSum == target_sum:
-       triplet.append([-target_sum, arr[left], arr[right]])
-       left +=1
-       right -=1
-
-       while (left < right) and arr[left] == arr[left  -  1]:
-         left += 1
-       while(left < right) and arr[right] == arr[right + 1]:
-          right -=1
+        if target_diff > 0:
+          left += 1 # need triplet with a Bigger sum
+        else:
+            right -=1 # need triplet with a smaller sum
+    return target_sum - smallest_difference
+          
 
 
-     elif currentSum > target_sum:
-       right -=1
-     else:
-        left +=1
+'''
 
+#answer
+import math
+def triplet_sum_close_to_target(arr, target_sum):
+  arr.sort()
+  smallest_difference = math.inf
+  for i in range(len(arr)-2):
+    left = i + 1
+    right = len(arr) - 1
+    while (left < right):
+      target_diff = target_sum - arr[i] - arr[left] - arr[right]
+      if target_diff == 0:  # we've found a triplet with an exact sum
+        return target_sum - target_diff  # return sum of all the numbers
 
+      # the second part of the following 'if' is to handle the smallest sum when we have more than one solution
+      if abs(target_diff) < abs(smallest_difference) or (abs(target_diff) == abs(smallest_difference) and target_diff > smallest_difference):
+        smallest_difference = target_diff  # save the closest and the biggest difference
 
+      if target_diff > 0:
+        left += 1  # we need a triplet with a bigger sum
+      else:
+        right -= 1  # we need a triplet with a smaller sum
+
+  return target_sum - smallest_difference
+
+'''
 
 
 

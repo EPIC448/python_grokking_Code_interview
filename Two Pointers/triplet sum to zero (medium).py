@@ -1,7 +1,14 @@
 
 '''
+ pre-requirment on leetcode
+  2 Sum and 2 SUM 2
+
+   Best explanation: https://www.youtube.com/watch?v=jzZsG8n2R9A
+
 Explanation -> https://www.youtube.com/watch?v=f6YqGTpFKig&t=198s
  Need to learn and research
+
+
 
 Problem Statement 
 Given an array of unsorted numbers, find all unique triplets in it that add up to zero.
@@ -74,7 +81,7 @@ def search_pair(arr, target_sum, left, triplets):
             right -=1 # need to Pair with a Larger Sum
         
       
-'''
+'''  Answer
 def search_triplets(arr):
   arr.sort()
   triplets = []
@@ -102,6 +109,35 @@ def search_pair(arr, target_sum, left, triplets):
       left += 1  # we need a pair with a bigger sum
     else:
       right -= 1  # we need a pair with a smaller sum
+
+
+'''
+
+
+'''
+  Redo off heart
+   # need this part, but was not needed for the code.  
+def search_pair(arr, target_sum, left, triplet):
+  right = len(arr) -1
+
+  while(left < right):
+     currentSum = arr[left] + arr[right]
+
+     if currentSum == target_sum:
+       triplet.append([-target_sum, arr[left], arr[right]])
+       left +=1
+       right -=1
+
+       while (left < right) and arr[left] == arr[left  -  1]:
+         left += 1
+       while(left < right) and arr[right] == arr[right + 1]:
+          right -=1
+
+
+     elif currentSum > target_sum:
+       right -=1
+     else:
+        left +=1
 
 
 '''

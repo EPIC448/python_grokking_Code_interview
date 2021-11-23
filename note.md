@@ -1,10 +1,13 @@
 
 
- Need a little work
+ Need a little work / Drawing out
 Sliding windows -> Medium , Hard
 
 Two Pointer;
  problem -> triplet Sum to Zero.
+
+ LinkedList
+ Drawing it out. 
 
  Understood. 
  Two Pointer 

@@ -1,5 +1,5 @@
 
-'''  Need a Drawing for this.
+'''  Need a Drawing for this. STUDY the Answer It selve
 
 Problem Statement 
 Given a list of non-overlapping intervals sorted by their start time, insert a given interval at the correct position and merge all necessary intervals to produce a list that has only mutually exclusive intervals.
@@ -17,7 +17,7 @@ Output: [[1,4], [5,7]]
 Explanation: After insertion, since [1,4] overlaps with [2,3], we merged them into one [1,4].
 '''
 # note: used the first example for this algorithem
-
+'''
 def insert(intervals, new_interval):
     merged = []
 
@@ -55,13 +55,14 @@ def insert(intervals, new_interval):
     #    Code is working the Answer..
 '''
 
-    #answer
+    #answer  Need to study this ,  learn to implement on my own.
 def insert(intervals, new_interval):
   merged = []
   i, start, end = 0, 0, 1
 
   # skip (and add to output) all intervals that come before the 'new_interval'
   while i < len(intervals) and intervals[i][end] < new_interval[start]:
+    print(len(intervals), intervals[i][start], intervals[i][end])
     merged.append(intervals[i])
     i += 1
 
@@ -83,7 +84,7 @@ def insert(intervals, new_interval):
 
 
     # return 
-'''
+
 
 def main():
   print("Intervals after inserting the new interval: " + str(insert([[1, 3], [5, 7], [8, 12]], [4, 6])))

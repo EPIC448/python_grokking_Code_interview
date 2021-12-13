@@ -58,7 +58,7 @@ def insert(intervals, new_interval):
     #answer  Need to study this ,  learn to implement on my own.
 def insert(intervals, new_interval):
   merged = []
-  i, start, end = 0, 0, 1
+  i, start,  end = 0, 0, 1
 
   # skip (and add to output) all intervals that come before the 'new_interval'
   while i < len(intervals) and intervals[i][end] < new_interval[start]:

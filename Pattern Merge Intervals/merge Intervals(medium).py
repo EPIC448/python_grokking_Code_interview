@@ -37,11 +37,12 @@ def merge(intervals):
   start = intervals[0].start
   end = intervals[0].end
 
+# Iterate over the intervals
   for i in range(1, len(intervals)):
     interval = intervals[i]
     if interval.start <= end:  # overlapping intervals, adjust the 'end'
       end = max(interval.end, end)
-    else:  # non-overlapping interval, add the previous internval and reset
+    else:  # non-overlapping interval, add the previous interval and reset
       mergedIntervals.append(Interval(start, end))
       start = interval.start
       end = interval.end

@@ -44,6 +44,33 @@ def smallest_subarray_with_given_sum(s, arr):
     
     return min_length
 
+
+
+    '''  Leetcode Solution
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+#        Best Sliding windown explanition [anthony Chao]-- https://leetcode.com/problems/minimum-size-subarray-sum/discuss/277445/Python-Sliding-Window-Approach-(with-comments)
+        min_length = math.inf
+        windowStart = 0
+        window_sum = 0
+       
+        for windowEnd in range(len(nums)):
+            window_sum += nums[windowEnd]
+            
+            
+            while window_sum >= target:
+                min_length = min(min_length, windowEnd - windowStart + 1)
+                window_sum -= nums[windowStart]
+#                 Code was not passing because I didnt add the "+= 1" i only did + 1
+                windowStart += 1
+
+#               Change solution here.
+        return min_length if min_length != math.inf else 0
+#         # print(min_length)
+
+    
+    
+    '''
+
 #answer   
 
 

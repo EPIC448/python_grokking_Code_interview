@@ -67,6 +67,23 @@ def smallest_subarray_with_given_sum(s, arr):
         return min_length if min_length != math.inf else 0
 #         # print(min_length)
 
+
+ Leet code Author Authony solution using MaxSIze
+ maxsize --- attribute of the sys module fetches the largest value a variable of data type Py_ssize_t can store. It is the Python platform's pointer that dictates the maximum size of lists and strings in Python
+from sys import maxsize
+   
+def minSubArrayLen(s, nums):
+	res = maxsize
+	left, total = 0, 0
+	
+	for i in range(len(nums)):
+		total += nums[i]
+		while total >= s:
+			res = min(res, i - left + 1)
+			total -= nums[left]
+			left += 1
+	
+	return res if res != maxsize else 0
     
     
     '''

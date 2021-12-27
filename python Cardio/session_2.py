@@ -23,26 +23,21 @@ print (chuckArray([1,2,3,4,5,6,7], 4))
 
 '''
 
+'''
+
 # note that I skip the Flatten List here. Need a little work.
-
+# All parts working
 def isAnagram(str1, str2):
-    str1 = str1.replace(" ", "")
-
-    for i in range(len(str1)):
+    if(sorted(str1)== sorted(str2)):
+        print(str1, str2)
+        print("This is anagram, True")
+    else:
+        print("not an anagram")
     
-       str1 = str1[::-1]
-       if (str1 == str2):
-            return (True)
-       else:
-            return (False)
-
-
+    #    str1 = str1[::-1]
    
-        # if(str1[i] == reversedString):
-        #     return True
-        # else:
-        #     return False
-        
 
+print(isAnagram("lsient", "lintes")) # false// 
+'''
 
-print(isAnagram("dirty Room", "dormitory")) # false// 
+#  Note, skipped the one that had the Letter change in this session_2

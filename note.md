@@ -11,3 +11,8 @@ Two Pointer;
 
  Understood. 
  Two Pointer 
+
+
+ To install things in python you use the following commande
+
+ pip3 install <package>

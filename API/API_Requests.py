@@ -12,6 +12,5 @@ response = requests.get("https://jsonplaceholder.typicode.com/comments",params= 
 print(response.json())
 
 
-#  Query API with out any method in Python. 
-print("Check this iourl")
+
 

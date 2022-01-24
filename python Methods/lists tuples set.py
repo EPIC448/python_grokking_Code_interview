@@ -90,4 +90,60 @@ new_list = course_str.split(' - ')
 print(new_list)
 '''
 
-#  Tuple and Sets.
+# ##### Tuple 
+# This is Mutable 
+'''
+list_1 = ['math', 'physics','history', 'compSci']
+list_2 = list_1
+list_1[0] = 'Art'
+# Notice how ART changed.
+['Art', 'physics', 'history', 'compSci']
+['Art', 'physics', 'history', 'compSci']
+
+print(list_2)
+print(list_1)
+
+
+# Immutable ... This is what a Tuple is.
+tuple_1 = ('math', 'physics','history', 'compSci')
+tuple_2 = tuple_1
+
+# If we try to change it, we get error.
+tuple_1[0] = 'Art'
+#  TypeError: 'tuple' object does not support item assignment
+
+# Tuples Can not be modified. Much better to use a List instead. Tuple give you quick access.
+#  But uses all the same methods as LISTs
+print(tuple_1)
+print(tuple_2)
+'''
+
+# SETS.
+cs_course = {'math', 'physics','history', 'compSci'}
+art_course = {'math', 'physics','history', 'design'}
+#  There Order changes, because order doesn not matter. 
+#  It will not allow duplicates
+'''
+print(cs_course)
+print('math' in cs_course) #=> true
+#  What Course two set have in common. 
+# course the both have in common
+print(cs_course.intersection(art_course)) # {'history', 'physics', 'math'}
+
+# Course Different between 2 sets
+print(cs_course.difference(art_course)) # {'compSci}
+
+# Join both courses together
+print(cs_course.union(art_course)) # {'physics', 'history', 'math', 'compSci', 'design'}
+'''
+
+# Create and empty List
+empty = []
+# Create empty Tuples
+empty = ()
+
+# Create empty Sets
+empty_set = {}
+# or
+empty_set = set()
+

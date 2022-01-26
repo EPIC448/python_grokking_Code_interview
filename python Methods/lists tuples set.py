@@ -1,6 +1,7 @@
 from asyncio import coroutines
 from audioop import reverse
 
+# Video: https://www.youtube.com/watch?v=W8KRzm-HUcc&t=28s
 # NOTE:  course was changed to courses at the last mins
 courses = ['math', 'physics','history', 'compSci']
 '''
